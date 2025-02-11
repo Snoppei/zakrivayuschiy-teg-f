@@ -47,7 +47,7 @@
 }
 
 .card {
-  margin-bottom: 52px;
+  margin-bottom: 50px;
   border: 2px solid var(--border-color);
   min-inline-size: 343px;
 }
@@ -71,7 +71,7 @@
 
 .card__image-wrapper::after {
   content: '</HTML>';
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 14px;
   text-shadow:
@@ -140,14 +140,14 @@
 }
 
 .button__text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   line-height: 12.6px;
   font-weight: 400;
   text-align: center;
 }
 
-.button__save {
+.save-button {
   background-color: transparent;
   text-align: center;
   min-inline-size: 306px;
@@ -160,9 +160,89 @@
   margin: 0 auto 100px;
 }
 
-.button__floppy {
+.save-button__floppy {
   width: var(--floppy-size);
   height: var(--floppy-size);
+}
+
+.save-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px clamp(1.875rem, -1.1268vw + 2.8891rem, 2.625rem);
+  border: 2px solid var(--border-color);
+  inline-size: clamp(21.313rem, 1.127vw + 21.048rem, 22.063rem);
+  outline: none;
+}
+
+.save-dialog[open]::backdrop {
+  background-color: black;
+  opacity: 0.75;
+}
+
+.save-dialog__description-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  object-fit: cover;
+  gap: 20px;
+  inline-size: 100%;
+}
+
+.save-dialog__description {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.save-dialog__floppy {
+  flex-shrink: 0;
+  width: 39px;
+  height: 39px;
+}
+
+.save-dialog__button {
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+  background-color: transparent;
+  min-block-size: 38px;
+  inline-size: 100%;
+  padding: 0;
+}
+
+.card__image_wo-filter {
+  filter: none;
+}
+
+.card__image_low-saturate-filter {
+  filter: contrast(125%) saturate(25%);
+}
+
+.card__image_hue-bright-filter {
+  filter: hue-rotate(35deg) brightness(160%);
+}
+
+.card__image_hue-filter {
+  filter: hue-rotate(25deg);
+}
+
+.card__image_invert-filter {
+  filter: invert(1);
+}
+
+.card__image_sepia-filter {
+  filter: sepia(90%);
+}
+
+.card__image_blur-filter {
+  filter: blur(8px);
+}
+
+.card__image_high-hue-filter {
+  filter: hue-rotate(90deg) brightness(70%) blur(2px);
 }
 
 @media (width > 375px) {
@@ -178,7 +258,7 @@
     margin-right: auto;
   }
 
-  .button__save {
+  .save-button {
     flex-direction: row;
     justify-items: center;
   }
