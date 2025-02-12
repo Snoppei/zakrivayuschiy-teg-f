@@ -16,6 +16,12 @@
   font-family: var(--main-font), sans-serif;
   font-variation-settings: 'wght' var(--main-text-wght);
   color: var(--text-color);
+  /* background-color: var(--bg-color); */
+  background: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .header {
@@ -27,6 +33,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  background-color: var(--bg-color);
 }
 
 .header_adaptive {
@@ -50,6 +57,7 @@
   margin-bottom: 50px;
   border: 2px solid var(--border-color);
   min-inline-size: 343px;
+  background-color: var(--bg-color);
 }
 
 .card_adaptive {
@@ -148,7 +156,7 @@
 }
 
 .save-button {
-  background-color: transparent;
+  background-color: var(--bg-color);
   text-align: center;
   min-inline-size: 306px;
   min-block-size: 51px;
