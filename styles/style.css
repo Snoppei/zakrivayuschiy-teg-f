@@ -137,6 +137,7 @@
 }
 
 .card__icon-button {
+  cursor: pointer;
   border: 2px solid transparent;
   padding: 0;
   background-color: transparent;
